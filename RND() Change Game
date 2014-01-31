@@ -50,6 +50,7 @@ Module Module1
         Randomize()
         Dim Choose As Integer
         Choose = (Rnd() Mod 2) + 1
+        'Choose = (Int(3 * Rnd() Mod 3) + 1) change 3 and mod value to increase enemy count very easily dude 
         Console.WriteLine(Choose)
         Select Case Choose
             Case 1
