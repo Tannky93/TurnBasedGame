@@ -1,5 +1,5 @@
 Module Module1
-
+    Dim Choose As Integer
     Structure Character
         Dim Name As String
         Dim Health, Mana, Strength, Intelligence, Agility, ID As Integer
@@ -25,6 +25,7 @@ Module Module1
         Console.WriteLine(CurrentEnemy.Strength)
         Console.WriteLine(CurrentEnemy.Intelligence)
         Console.WriteLine(CurrentEnemy.Agility)
+
         Console.ReadKey()
 
     End Sub
@@ -47,9 +48,18 @@ Module Module1
         Goblin.Intelligence = 7
         Goblin.Agility = 7
 
+        Dim Golem As Character
+        Golem.Name = "Golem"
+        Golem.Health = 20
+        Golem.Mana = 10
+        Golem.Strength = 12
+        Golem.Intelligence = 4
+        Golem.Agility = 2
+
         Randomize()
         Dim Choose As Integer
-        Choose = (Rnd() Mod 2) + 1
+        ' changing the Rnd() to (int(n*Rnd() Mod n)+ 1) change the value of n to how many enemies you want for the game dude.
+        Choose = (Int(3 * Rnd() Mod 3) + 1)
         Console.WriteLine(Choose)
         Select Case Choose
             Case 1
@@ -59,8 +69,17 @@ Module Module1
                 ChooseEnemy.Strength = Wolf.Strength
                 ChooseEnemy.Intelligence = Wolf.Intelligence
                 ChooseEnemy.Agility = Wolf.Agility
+
             Case 2
                 ChooseEnemy.Name = Goblin.Name
+                ChooseEnemy.Health = Goblin.Health
+                ChooseEnemy.Mana = Goblin.Mana
+                ChooseEnemy.Strength = Goblin.Strength
+                ChooseEnemy.Intelligence = Goblin.Intelligence
+                ChooseEnemy.Agility = Goblin.Agility
+
+            Case 3
+                ChooseEnemy.Name = Golem.Name
                 ChooseEnemy.Health = Goblin.Health
                 ChooseEnemy.Mana = Goblin.Mana
                 ChooseEnemy.Strength = Goblin.Strength
