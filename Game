@@ -1,0 +1,73 @@
+Module Module1
+
+    Structure Character
+        Dim Name As String
+        Dim Health, Mana, Strength, Intelligence, Agility, ID As Integer
+    End Structure
+
+
+
+
+    Sub Main()
+        Dim Player As Character
+        Player.Name = ""
+        Player.Health = 100
+        Player.Mana = 100
+        Player.Strength = 10
+        Player.Intelligence = 10
+        Player.Agility = 10
+
+        Dim CurrentEnemy As Character
+        CurrentEnemy = ChooseEnemy()
+        Console.WriteLine(CurrentEnemy.Name)
+        Console.WriteLine(CurrentEnemy.Health)
+        Console.WriteLine(CurrentEnemy.Mana)
+        Console.WriteLine(CurrentEnemy.Strength)
+        Console.WriteLine(CurrentEnemy.Intelligence)
+        Console.WriteLine(CurrentEnemy.Agility)
+        Console.ReadKey()
+
+    End Sub
+
+
+    Function ChooseEnemy() As Character
+        Dim Wolf As Character
+        Wolf.Name = "Wolf"
+        Wolf.Health = 15
+        Wolf.Mana = 15
+        Wolf.Strength = 5
+        Wolf.Intelligence = 2
+        Wolf.Agility = 7
+
+        Dim Goblin As Character
+        Goblin.Name = "Goblin"
+        Goblin.Health = 10
+        Goblin.Mana = 20
+        Goblin.Strength = 6
+        Goblin.Intelligence = 7
+        Goblin.Agility = 7
+
+        Randomize()
+        Dim Choose As Integer
+        Choose = (Rnd() Mod 2) + 1
+        Console.WriteLine(Choose)
+        Select Case Choose
+            Case 1
+                ChooseEnemy.Name = Wolf.Name
+                ChooseEnemy.Health = Wolf.Health
+                ChooseEnemy.Mana = Wolf.Mana
+                ChooseEnemy.Strength = Wolf.Strength
+                ChooseEnemy.Intelligence = Wolf.Intelligence
+                ChooseEnemy.Agility = Wolf.Agility
+            Case 2
+                ChooseEnemy.Name = Goblin.Name
+                ChooseEnemy.Health = Goblin.Health
+                ChooseEnemy.Mana = Goblin.Mana
+                ChooseEnemy.Strength = Goblin.Strength
+                ChooseEnemy.Intelligence = Goblin.Intelligence
+                ChooseEnemy.Agility = Goblin.Agility
+        End Select
+    End Function
+
+
+End Module
